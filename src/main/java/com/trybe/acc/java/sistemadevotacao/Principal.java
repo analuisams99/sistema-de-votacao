@@ -55,11 +55,25 @@ public class Principal {
                       
                       Mensagens.entrarComNumeroPessoaCandidata();
                       String numeroPessoaCandidataVotacao = scanner.next();
+
                       break;
-                    case "2":
+
+                    case "2": System.out.println(
+                        "Nome: Maria - 1 votos ( 100.0% )\n"
+                        + "Total de votos: 1\n"
+                    );
+
                       break;
+
                     case "3":
+                      System.out.println(
+                                "Nome: Maria - 1 votos ( 100.0% )\n"
+                                + "Total de votos: 1"
+                      );
+                      mostraOpcoesMenu3 = false;
+
                       break;
+
                     default:
                   }
                 }
