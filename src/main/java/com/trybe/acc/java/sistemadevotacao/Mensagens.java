@@ -52,4 +52,9 @@ public class Mensagens {
     );
   }
   
+  /**Método que imprime, no console, a mensagem que o numero da pessoa candidata já está em uso. */
+  public static void numeroPessoaCandidataJaUtilizado() {
+    System.out.println("Número pessoa candidata já utilizado! \n");
+  }
+  
 }
