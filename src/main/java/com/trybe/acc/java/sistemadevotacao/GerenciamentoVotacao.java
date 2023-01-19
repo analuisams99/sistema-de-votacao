@@ -18,9 +18,14 @@ public class GerenciamentoVotacao {
     }
   }
   
+  /**Método de cadastrar uma pessoa Eleitora. */
   public void cadastrarPessoaEleitora(String nome, String cpf) {
-    pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
-    cpfComputado.add(cpf);
+    if (pessoasEleitoras.stream().anyMatch(pessoa -> pessoa.getCpf().equals(cpf))) {
+      Mensagens.cpfPessoaEleitoraJaCadastrado();
+    } else {
+      pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
+      cpfComputado.add(cpf);
+    }
   }
   
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {}
