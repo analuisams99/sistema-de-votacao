@@ -4,13 +4,18 @@ import java.util.ArrayList;
 
 /**Classe GerenciamentoVotação. */
 public class GerenciamentoVotacao {
-  private ArrayList<PessoaCandidata> pessoasCanditadas;
-  private ArrayList<PessoaEleitora> pessoasEleitoras;
-  private ArrayList<String> cpfComputado;
-  private int totalVotos;
-  
+  private ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<PessoaCandidata>();
+  private ArrayList<PessoaEleitora> pessoasEleitoras = new ArrayList<PessoaEleitora>();
+  private ArrayList<String> cpfComputado = new ArrayList<String>();
+  private int totalVotos = 0;
+
+  /**Método de cadastrar uma pessoa Candidata. */
   public void cadastrarPessoaCandidata(String nome, int numero) {
-    pessoasCanditadas.add(new PessoaCandidata(nome, numero));
+    if (pessoasCandidatas.stream().anyMatch(pessoa -> pessoa.getNumero() == numero)) {
+      Mensagens.numeroPessoaCandidataJaUtilizado();
+    } else {
+      pessoasCandidatas.add(new PessoaCandidata(nome, numero));
+    }
   }
   
   public void cadastrarPessoaEleitora(String nome, String cpf) {
