@@ -57,4 +57,9 @@ public class Mensagens {
     System.out.println("Número pessoa candidata já utilizado! \n");
   }
   
+  /**Método que imprime, no console, a mensagem que o cpf da pessoa eleitora já está cadastrado. */
+  public static void cpfPessoaEleitoraJaCadastrado() {
+    System.out.println("Pessoa eleitora já cadastrada! \n");
+  }
+  
 }
