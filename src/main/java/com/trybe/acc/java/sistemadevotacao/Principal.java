@@ -25,7 +25,9 @@ public class Principal {
 
           Mensagens.entrarComNumeroPessoaCandidata();
           String numeroPessoaCandidata = scanner.next();
-
+          
+          gerenciamentoVotacao.cadastrarPessoaCandidata(
+              nomePessoaCandidata, Integer.parseInt(numeroPessoaCandidata));
           break;
 
         case "2":
@@ -41,6 +43,7 @@ public class Principal {
                 Mensagens.entrarComCpfPessoaEleitora();
                 String cpfPessoaEleitora = scanner.next();
 
+                gerenciamentoVotacao.cadastrarPessoaEleitora(nomePessoaEleitora, cpfPessoaEleitora);
                 break;
 
               case "2":
