@@ -25,6 +25,8 @@ public class Principal {
 
           Mensagens.entrarComNumeroPessoaCandidata();
           String numeroPessoaCandidata = scanner.next();
+
+          Mensagens.pessoaCandidataCadastradaComSucesso();
           
           gerenciamentoVotacao.cadastrarPessoaCandidata(
               nomePessoaCandidata, Integer.parseInt(numeroPessoaCandidata));
@@ -43,6 +45,8 @@ public class Principal {
                 Mensagens.entrarComCpfPessoaEleitora();
                 String cpfPessoaEleitora = scanner.next();
 
+                Mensagens.pessoaEleitoraCadastradaComSucesso();
+
                 gerenciamentoVotacao.cadastrarPessoaEleitora(nomePessoaEleitora, cpfPessoaEleitora);
                 break;
 
@@ -58,23 +62,17 @@ public class Principal {
                       
                       Mensagens.entrarComNumeroPessoaCandidata();
                       String numeroPessoaCandidataVotacao = scanner.next();
-
+                      
+                      gerenciamentoVotacao.votar(
+                          cpfPessoaEleitoraVotacao, Integer.parseInt(numeroPessoaCandidataVotacao));
                       break;
 
-                    case "2": System.out.println(
-                        "Nome: Maria - 1 votos ( 100.0% )\n"
-                        + "Total de votos: 1\n"
-                    );
-
+                    case "2": gerenciamentoVotacao.mostrarResultado();
                       break;
 
-                    case "3":
-                      System.out.println(
-                                "Nome: Maria - 1 votos ( 100.0% )\n"
-                                + "Total de votos: 1"
-                      );
+                    case "3": gerenciamentoVotacao.mostrarResultado();
+                 
                       mostraOpcoesMenu3 = false;
-
                       break;
 
                     default:
