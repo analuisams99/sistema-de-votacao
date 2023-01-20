@@ -3,12 +3,13 @@ package com.trybe.acc.java.sistemadevotacao;
 /**Classe PessoaCandidata. */
 public class PessoaCandidata extends Pessoa {
   private int numero;
-  private int votos = 0;
+  private int votos;
   
   /**Método construtor da classe PessoaCandidata. */
   public PessoaCandidata(String nome, int numero) {
     super(nome);
     this.numero = numero;
+    votos = 0;
   }
 
   public int getNumero() {
@@ -28,7 +29,7 @@ public class PessoaCandidata extends Pessoa {
   }
   
   public void receberVotos() {
-    this.votos += 1;
+    setVotos(votos + 1);
   }
   
 }
