@@ -62,4 +62,9 @@ public class Mensagens {
     System.out.println("Pessoa eleitora já cadastrada! \n");
   }
   
+  /**Método que imprime, no console, a mensagem que a pessoa eleitora já votou. */
+  public static void pessoaEleitoraJaVotou() {
+    System.out.println("Pessoa eleitora já votou! \n");
+  }
+  
 }
