@@ -24,11 +24,21 @@ public class GerenciamentoVotacao {
       Mensagens.cpfPessoaEleitoraJaCadastrado();
     } else {
       pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
-      cpfComputado.add(cpf);
     }
   }
   
-  public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {}
+  /**Método de votar. */
+  public void votar(String cpfPessoaEleitora, int numPessoaCandidata) {
+    PessoaCandidata candidata = new PessoaCandidata(cpfPessoaEleitora, numPessoaCandidata);
+
+    if (pessoasEleitoras.stream().anyMatch(pessoa -> pessoa.getCpf().equals(cpfPessoaEleitora))) {
+      Mensagens.pessoaEleitoraJaVotou();
+    }
+    if (pessoasCandidatas.stream().anyMatch(pessoa -> pessoa.getNumero() == numPessoaCandidata)) {
+      candidata.receberVotos();
+      cpfComputado.add(cpfPessoaEleitora);
+    }
+  }
   
   public void mostrarResultado() {}
   
